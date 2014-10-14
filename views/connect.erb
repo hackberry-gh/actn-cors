@@ -1,0 +1,123 @@
+(function(window){ 
+  
+  function init(){
+
+    var 
+    verbs = ['get','post','put','delete'],
+    verb = null,
+    i = null,
+    actn = {
+      _csrf: '<%= csrf %>',
+      _apikey: '<%= apikey %>',
+      _host: 'http://<%= host %>'
+    }
+    
+    jQuery.ajaxSetup({
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('X_CSRF_TOKEN', actn._csrf);
+        xhr.setRequestHeader('X_APIKEY', actn._apikey);
+      },
+      complete: function(jxhr) {
+        actn._csrf = jxhr.getResponseHeader('X_CSRF_TOKEN');
+      },
+      crossDomain: true
+    });
+
+    $.support.cors = true;
+    
+    actn.api = function(params) {
+      
+      switch(params['type']){
+        case "GET":
+          params['data'] = params['data'] || {}
+          break;
+        case "POST":
+        case "PUT":
+        case "PATCH":
+          params['data'] =  params['data']           
+          break;
+      }
+
+      $.ajax({
+        url: actn._host + params['path'],
+        type: params['type'],
+        xhrFields: { withCredentials: true },
+        dataType: 'json',
+        data: params['data'],
+        success: function(data) {
+          actn.lastResult = data;          
+          if(typeof params['success'] === 'function'){
+            params['success'](data);
+          }
+        },
+        error: function(jqXHR,textStatus,errorThrown) {
+          if(jqXHR.responseText !== ""){
+            actn.lastError = JSON.parse(jqXHR.responseText);          
+          }
+          if(typeof params['error'] === 'function'){
+            params['error'](jqXHR);
+          }
+        }
+      })
+    }
+
+    actn.get = function(params){
+      params['type'] = "GET";
+      actn.api(params);      
+    }
+    
+    actn.post = function(params){
+      params['type'] = "POST";
+      actn.api(params);      
+    }
+    
+    actn.put = function(params){
+      params['type'] = "PUT";
+      actn.api(params);      
+    }
+    
+    actn.delete = function(params){
+      params['type'] = "DELETE";
+      actn.api(params);      
+    }
+        
+    window.actn = actn;
+    
+    setTimeout(function(){
+      var src = $("#actn").attr("src");
+      $("#actn").remove();
+      loadScript("actn",src);
+    },<%= ttl %>);
+    
+  }
+  
+  function loadScript(id, url, callback) {
+
+    var script = document.createElement("script")
+    script.id = id;
+    script.type = "text/javascript";
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function () {
+        if (script.readyState == "loaded" || script.readyState == "complete") {
+          script.onreadystatechange = null;
+          if (typeof(callback) === "function"){ callback(); }
+        }
+      };
+    } else { //Others
+      script.onload = function () {
+         if (typeof(callback) === "function"){ callback(); }
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  }
+  
+  if(typeof jQuery === 'undefined'){
+    loadScript("jquery", "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js", init);    
+  }else{
+    init();
+  }
+  
+})(window);

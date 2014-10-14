@@ -1,0 +1,129 @@
+GIT
+  remote: https://github.com/hackberry-gh/actn-api
+  revision: 22100a84cbb7b095fe82d014bdab72d4dd092151
+  specs:
+    actn-api (0.0.6)
+      goliath
+      helmet
+      oj
+      rack_csrf
+      tilt
+
+GIT
+  remote: https://github.com/hackberry-gh/actn-db
+  revision: 67c7a07c99b1fb84ee415358128f7da86299103b
+  specs:
+    actn-db (0.0.5)
+      activemodel
+      bcrypt
+      coffee-script
+      em-pg-client
+      oj
+
+GIT
+  remote: https://github.com/hackberry-gh/actn-jobs
+  revision: 82264fa03f3da073ead8bf1c5a6dd948f7c9ae37
+  specs:
+    actn-jobs (0.0.5)
+      websocket-eventmachine-client
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activemodel (4.1.6)
+      activesupport (= 4.1.6)
+      builder (~> 3.1)
+    activesupport (4.1.6)
+      i18n (~> 0.6, >= 0.6.9)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.1)
+      tzinfo (~> 1.1)
+    addressable (2.3.6)
+    async-rack (0.5.1)
+      rack (~> 1.1)
+    bcrypt (3.1.7)
+    builder (3.2.2)
+    coffee-script (2.3.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.8.0)
+    cookiejar (0.3.2)
+    em-http-request (1.1.2)
+      addressable (>= 2.3.4)
+      cookiejar
+      em-socksify (>= 0.3)
+      eventmachine (>= 1.0.3)
+      http_parser.rb (>= 0.6.0)
+    em-pg-client (0.3.4)
+      eventmachine (~> 1.0.0)
+      pg (>= 0.17.0)
+    em-socksify (0.3.0)
+      eventmachine (>= 1.0.0.beta.4)
+    em-synchrony (1.0.3)
+      eventmachine (>= 1.0.0.beta.1)
+    em-websocket (0.3.8)
+      addressable (>= 2.1.1)
+      eventmachine (>= 0.12.9)
+    eventmachine (1.0.3)
+    execjs (2.2.1)
+    goliath (1.0.4)
+      async-rack
+      em-synchrony (>= 1.0.0)
+      em-websocket (= 0.3.8)
+      eventmachine (>= 1.0.0.beta.4)
+      http_parser.rb (= 0.6.0)
+      log4r
+      multi_json
+      rack (>= 1.2.2)
+      rack-contrib
+      rack-respond_to
+    helmet (0.2.1)
+      goliath
+      http_router
+      tilt
+    http_parser.rb (0.6.0)
+    http_router (0.11.1)
+      rack (>= 1.0.0)
+      url_mount (~> 0.2.1)
+    i18n (0.6.11)
+    json (1.8.1)
+    log4r (1.1.10)
+    minitest (5.4.2)
+    multi_json (1.10.1)
+    oj (2.10.3)
+    pg (0.17.1)
+    rack (1.5.2)
+    rack-accept-media-types (0.9)
+    rack-contrib (1.1.0)
+      rack (>= 0.9.1)
+    rack-respond_to (0.9.8)
+      rack-accept-media-types (>= 0.6)
+    rack_csrf (2.5.0)
+      rack (>= 1.1.0)
+    rake (10.3.2)
+    thread_safe (0.3.4)
+    tilt (2.0.1)
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
+    url_mount (0.2.1)
+      rack
+    websocket (1.2.1)
+    websocket-eventmachine-base (1.1.0)
+      eventmachine (~> 1.0)
+      websocket (~> 1.0)
+      websocket-native (~> 1.0)
+    websocket-eventmachine-client (1.1.0)
+      websocket-eventmachine-base (~> 1.0)
+    websocket-native (1.0.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  actn-api!
+  actn-db!
+  actn-jobs!
+  em-http-request
+  minitest
+  rake

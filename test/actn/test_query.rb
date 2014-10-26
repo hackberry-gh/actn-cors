@@ -1,9 +1,9 @@
 require 'minitest_helper'
 require 'goliath/test_helper'
-require 'apis/cors/query'
+require 'apis/query'
 require 'actn/api/client'
 require 'actn/db'
-
+require 'log4r'
 module Actn
   module Api
     class TestQuery < MiniTest::Test
@@ -17,7 +17,7 @@ module Actn
         10.times{ |i| DB::Set['supporters'].upsert({path: "/supporters", name: "supporter_#{random_str}"}) }
         DB::Set['supporters'].upsert({path: "/supporters/customs", name: "user_#{random_str}"})        
     
-        @api_options = { :verbose => true, :log_stdout => true, config: "#{Actn::Api.root}/config/core.rb" }
+        @api_options = { :verbose => true, :log_stdout => true, config: "#{Actn::Api.root}/config/common.rb" }
         @err = Proc.new { assert false, "API request failed" }
         @client = Client.create({domain: "localhost:9900"})
         @headr = { 'X_APIKEY' => @client.credentials['apikey'] }

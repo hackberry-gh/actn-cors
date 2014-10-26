@@ -1,6 +1,6 @@
 require 'minitest_helper'
 require 'goliath/test_helper'
-require 'apis/cors/connect'
+require 'apis/connect'
 require 'actn/api/client'
 require 'actn/db'
 
@@ -12,7 +12,7 @@ module Actn
 
       def setup
     
-        @api_options = { :verbose => true, :log_stdout => true, config: "#{Actn::Api.root}/config/core.rb" }
+        @api_options = { :verbose => true, :log_stdout => true, config: "#{Actn::Api.root}/config/common.rb" }
         @err = Proc.new { assert false, "API request failed" }
         @client = Client.create({domain: "localhost:9900"})
 

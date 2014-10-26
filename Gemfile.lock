@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/hackberry-gh/actn-db
-  revision: 67c7a07c99b1fb84ee415358128f7da86299103b
+  revision: 40cf53d1b12d0aab2898e2ddd9cbd81d5c5a0ca5
   specs:
     actn-db (0.0.5)
       activemodel
@@ -42,7 +42,7 @@ GEM
     addressable (2.3.6)
     async-rack (0.5.1)
       rack (~> 1.1)
-    bcrypt (3.1.7)
+    bcrypt (3.1.9)
     builder (3.2.2)
     coffee-script (2.3.0)
       coffee-script-source
@@ -66,7 +66,7 @@ GEM
       addressable (>= 2.1.1)
       eventmachine (>= 0.12.9)
     eventmachine (1.0.3)
-    execjs (2.2.1)
+    execjs (2.2.2)
     goliath (1.0.4)
       async-rack
       em-synchrony (>= 1.0.0)
@@ -91,7 +91,7 @@ GEM
     log4r (1.1.10)
     minitest (5.4.2)
     multi_json (1.10.1)
-    oj (2.10.3)
+    oj (2.10.4)
     pg (0.17.1)
     rack (1.5.2)
     rack-accept-media-types (0.9)

@@ -29,9 +29,12 @@ class Connect < Actn::Api::Cors
   
   def authorize!
     begin
+      puts env['HTTP_REFERER'].to_domain.inspect, query['apikey']
       client = Client.find_for_auth(env['HTTP_REFERER'].to_domain, query['apikey'])
+      puts client.inspect
       client.set_session env['rack.session'].id
-    rescue
+    rescue Exception => e
+      env.logger.error e.inspect
       raise Goliath::Validation::UnauthorizedError.new
     end
   end

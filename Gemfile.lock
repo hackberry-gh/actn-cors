@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/hackberry-gh/actn-api
-  revision: 22100a84cbb7b095fe82d014bdab72d4dd092151
+  revision: b1ed7f3c768270a7bcc59a36b7384cab9ad28e91
   specs:
     actn-api (0.0.6)
       goliath
@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/hackberry-gh/actn-db
-  revision: f162ad8167792fdd72ea78a64a56272ffdbefbef
+  revision: a9643174cd511b6cfb5eafa9dba0979d0d68a2c2
   specs:
     actn-db (0.0.5)
       activemodel
@@ -22,7 +22,7 @@ GIT
 
 GIT
   remote: https://github.com/hackberry-gh/actn-jobs
-  revision: 82264fa03f3da073ead8bf1c5a6dd948f7c9ae37
+  revision: c2f8e0c4f8c9a662823b81081c3da076245c4637
   specs:
     actn-jobs (0.0.5)
       websocket-eventmachine-client

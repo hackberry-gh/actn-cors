@@ -24,7 +24,7 @@ module Actn
 
         10.times{ |i| DB::Set['supporters'].upsert({path: "/supporters", first_name: "supporter_#{random_str}"}) }
         
-        @uuid =  Oj.load(DB::Set['supporters'].query({select: 'uuid', limit: 1}))[0]['uuid']
+        @uuid =  Oj.load(DB::Set['supporters'].query({select: ['uuid'], limit: 1}))[0]['uuid']
     
         @api_options = { :verbose => true, :log_stdout => true, config: "#{Actn::Api.root}/config/common.rb" }
         @err = Proc.new { assert false, "API request failed" }

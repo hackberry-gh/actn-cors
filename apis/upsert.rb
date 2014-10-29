@@ -10,7 +10,7 @@ class Upsert < Actn::Api::Cors
   
   def process table, path
     data['path'] = path
-    # puts data.inspect
+    puts data.inspect
     Actn::DB::Set[table].validate_and_upsert(data)
   end
   

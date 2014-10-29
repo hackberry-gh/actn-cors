@@ -5,4 +5,4 @@ web_cors_delete:  bundle exec actn-api delete  -p 6004 -sv
 
 worker_jobs: bundle exec rake jobs:work
 
-web: haproxy -f ./haproxy.cfg
+web: echo $PORT && haproxy -f ./haproxy.cfg 

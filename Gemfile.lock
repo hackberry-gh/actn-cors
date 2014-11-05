@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/hackberry-gh/actn-api
-  revision: b1ed7f3c768270a7bcc59a36b7384cab9ad28e91
+  revision: 6f2166107aaca547db216f27f8753800b907211a
   specs:
-    actn-api (0.0.6)
+    actn-api (0.0.8)
       goliath
       helmet
       oj
@@ -11,9 +11,9 @@ GIT
 
 GIT
   remote: https://github.com/hackberry-gh/actn-db
-  revision: a9643174cd511b6cfb5eafa9dba0979d0d68a2c2
+  revision: 14e2d71fdacf6eafb5563d919ba3885504d1d4d1
   specs:
-    actn-db (0.0.5)
+    actn-db (0.0.8)
       activemodel
       bcrypt
       coffee-script
@@ -30,10 +30,10 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activemodel (4.1.6)
-      activesupport (= 4.1.6)
+    activemodel (4.1.7)
+      activesupport (= 4.1.7)
       builder (~> 3.1)
-    activesupport (4.1.6)
+    activesupport (4.1.7)
       i18n (~> 0.6, >= 0.6.9)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
@@ -91,11 +91,11 @@ GEM
     log4r (1.1.10)
     minitest (5.4.2)
     multi_json (1.10.1)
-    oj (2.10.4)
+    oj (2.11.0)
     pg (0.17.1)
     rack (1.5.2)
     rack-accept-media-types (0.9)
-    rack-contrib (1.1.0)
+    rack-contrib (1.2.0)
       rack (>= 0.9.1)
     rack-respond_to (0.9.8)
       rack-accept-media-types (>= 0.6)

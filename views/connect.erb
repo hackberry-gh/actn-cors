@@ -34,6 +34,7 @@
         case "POST":
         case "PUT":
         case "PATCH":
+        case "DELETE":  
           params['data'] =  params['data']           
           break;
       }
@@ -88,6 +89,10 @@
       $("#actn").remove();
       loadScript("actn",src);
     },<%= ttl %>);
+    
+    if(typeof window.onActn === "function"){
+      window.onActn(actn);
+    }
     
   }
   

@@ -6,11 +6,10 @@ class Delete < Actn::Api::Cors
   use Goliath::Rack::Validation::RequestMethod, %w(DELETE OPTIONS)
   
   ##
-  # GET /table_name?query={ where: { uuid: 1 } }
+  # DELETE /table_name?uuid=1
   
   def process table, path
-    
-    Actn::DB::Set[table].delete({uuid: query['uuid']})
+    Actn::DB::Set[table].delete({uuid: data['uuid']})
   end
   
 end

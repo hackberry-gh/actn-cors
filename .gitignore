@@ -1,5 +1,2 @@
 # Ignore bundler config.
 /.bundle
-
-# No need for prod
-/.env

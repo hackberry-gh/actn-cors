@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/hackberry-gh/actn-db
-  revision: 14e2d71fdacf6eafb5563d919ba3885504d1d4d1
+  revision: 4de56a973ef2884d4b42d5c18cbe996f81fe81cc
   specs:
     actn-db (0.0.8)
       activemodel

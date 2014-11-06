@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/hackberry-gh/actn-api
-  revision: a84a408d218962e84b6992aee1dbcb0c5442a3f5
+  revision: 8cc2dc1ce021aa9a18c35af2d8858f88e77d0a68
   specs:
-    actn-api (0.0.8)
+    actn-api (0.0.9)
       goliath
       helmet
       oj
@@ -11,9 +11,9 @@ GIT
 
 GIT
   remote: https://github.com/hackberry-gh/actn-db
-  revision: 4de56a973ef2884d4b42d5c18cbe996f81fe81cc
+  revision: 53b41773147507d5a7393f6a0b2b056f1e57f6ee
   specs:
-    actn-db (0.0.8)
+    actn-db (0.0.9)
       activemodel
       bcrypt
       coffee-script
@@ -22,9 +22,9 @@ GIT
 
 GIT
   remote: https://github.com/hackberry-gh/actn-jobs
-  revision: 2a86cd818f650e08c4449e726c62e717298825ef
+  revision: a450a622c2004b3d4f0d451afc5905016f30d1b6
   specs:
-    actn-jobs (0.0.6)
+    actn-jobs (0.0.7)
       em-http-request
       websocket-eventmachine-client
 
